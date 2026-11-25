@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KULALENUMIO のツール置き場</title>
+<meta name="description" content="Scrap Mechanic → Blender → Unity（HDRP）の道具「SMC-AD」シリーズと、ゲーム用 MOD の案内ページ。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page">
+
+<div id="titlebar">
+  <h1>KULALENUMIO のツール置き場</h1>
+  <div class="sub">Scrap Mechanic → Blender → Unity の道具と、ゲームの MOD ／ Tools &amp; mods by KULALENUMIO</div>
+</div>
+<div id="menubar">
+  <a href="#top">ホーム</a>|<a href="#list">一覧</a>|<a href="#smcad">SMC-AD シリーズ</a>|<a href="#which">どれを入れる？</a>|<a href="#news">更新履歴</a>|<a href="https://github.com/KULALENUMIO">GitHub</a>
+</div>
+
+<div id="wrap">
+
+<!-- ===== 左のメニュー ===== -->
+<div id="side">
+  <div class="task">
+    <h2>メニュー</h2>
+    <ul>
+      <li><a href="#top">はじめに</a></li>
+      <li><a href="#list">一覧表</a></li>
+      <li><a href="#smcad">SMC-AD シリーズ</a>
+        <ul>
+          <li><a href="#flow">全体の流れ</a></li>
+          <li><a href="#p-smcad">SMC-AD（Blender）</a></li>
+          <li><a href="#p-surfaces">SMC-AD Surfaces</a></li>
+          <li><a href="#p-importer">Importer for Unity</a></li>
+          <li><a href="#p-details">SMC-DETAILS</a></li>
+          <li><a href="#p-tank">Tank Rigging</a></li>
+        </ul>
+      </li>
+      <li><a href="#p-bplib">Blueprint Lib</a></li>
+      <li><a href="#p-sprocket">Sprocket MOD</a></li>
+      <li><a href="#which">どれを入れる？</a></li>
+      <li><a href="#renamed">名前が変わったもの</a></li>
+      <li><a href="#news">更新履歴</a></li>
+      <li><a href="#notes">注意・ライセンス</a></li>
+    </ul>
+  </div>
+  <div class="task">
+    <h2>リポジトリ</h2>
+    <ul>
+      <li><a href="https://github.com/KULALENUMIO/SMC-AD">SMC-AD</a></li>
+      <li><a href="https://github.com/KULALENUMIO/SMC-AD-TankRigging">SMC-AD-TankRigging</a></li>
+      <li><a href="https://github.com/KULALENUMIO/BlueprintLib">BlueprintLib</a></li>
+      <li><a href="https://github.com/KULALENUMIO/SPROCKET-ARCADE-BATTLE-MOD">SPROCKET-ARCADE-BATTLE-MOD</a></li>
+    </ul>
+  </div>
+  <div class="task">
+    <h2>詳細</h2>
+    <p>最終更新: 2026/11/25<br>道具の数: 7（リポジトリ 4）</p>
+  </div>
+</div>
+
+<!-- ===== 本文 ===== -->
+<div id="main">
+
+<h2 class="sec" id="top">はじめに</h2>
+<p>GitHub に置いている道具の案内ページです。リポジトリが増えて分かりにくくなったので、<b>何がどこにあって、何に使うのか</b>をここにまとめました。</p>
+<p class="note">This page lists the tools on <a href="https://github.com/KULALENUMIO">github.com/KULALENUMIO</a>: the SMC-AD series (Scrap Mechanic blueprints → Blender → Unity HDRP) and a few game mods. Most READMEs are in Japanese; Blueprint Lib and the Sprocket mod also have English ones.</p>
+
+<div class="warn">
+  <b class="mark">⚠ ご注意</b>　SMC-AD シリーズ（SMC-AD・Surfaces・Importer・SMC-DETAILS・Tank Rigging）は<b>α版・試作品</b>です。作者の気まぐれで作っているので、まともな更新やサポートは期待しないでください。使い方やデータの形式は予告なく変わります。
+</div>
+
+<h2 class="sec" id="list">一覧表</h2>
+<div class="tbl">
+<table>
+  <tr><th>名前</th><th>何をするもの</th><th>動く場所</th><th>最新版</th><th>置き場所</th></tr>
+  <tr><td><a href="#p-smcad">SMC-AD</a></td><td>Scrap Mechanic のブループリントを Blender に取り込んで整える（変換ツール付き）</td><td>Blender 4.2 以降・Windows</td><td class="v">0.7.0（α）</td><td><a href="https://github.com/KULALENUMIO/SMC-AD">SMC-AD</a></td></tr>
+  <tr><td><a href="#p-surfaces">SMC-AD Surfaces</a></td><td>パーツごとに材質（金属・ゴム・木など）を付ける。SMC-AD の追加分</td><td>Blender</td><td class="v">0.4.0（α）</td><td><a href="https://github.com/KULALENUMIO/SMC-AD">SMC-AD</a></td></tr>
+  <tr><td><a href="#p-importer">SMC-AD Importer for Unity</a></td><td>SMC-AD で書き出したモデルを、SM の見た目のまま Unity に取り込む</td><td>Unity 6000.3＋HDRP</td><td class="v">0.5.0（α）</td><td><a href="https://github.com/KULALENUMIO/SMC-AD">SMC-AD</a></td></tr>
+  <tr><td><a href="#p-details">SMC-DETAILS for Unity</a></td><td>汚し・傷・錆・デカール・装備（チェーン、カモネット、布）（試作）</td><td>Unity 6000.3＋HDRP</td><td class="v">0.4.0（試作）</td><td><a href="https://github.com/KULALENUMIO/SMC-AD">SMC-AD</a></td></tr>
+  <tr><td><a href="#p-tank">SMC-AD Tank Rigging for Unity</a></td><td>取り込んだ戦車を、WASD とマウスで操縦できるようにする</td><td>Unity 6000.3＋HDRP</td><td class="v">0.9.0（α）</td><td><a href="https://github.com/KULALENUMIO/SMC-AD-TankRigging">SMC-AD-TankRigging</a></td></tr>
+  <tr><td><a href="#p-bplib">Blueprint Lib</a></td><td>ブループリントをフォルダ・タグで整理して、リフトのように設置する MOD</td><td>Scrap Mechanic（クリエイティブ）</td><td class="v">1.0.1</td><td><a href="https://github.com/KULALENUMIO/BlueprintLib">BlueprintLib</a>・Workshop</td></tr>
+  <tr><td><a href="#p-sprocket">Sprocket Arcade Battle MOD</a></td><td>Sprocket の戦車戦を、War Thunder 風のアーケードにする MOD</td><td>Sprocket＋BepInEx 6</td><td class="v">1.12.0</td><td><a href="https://github.com/KULALENUMIO/SPROCKET-ARCADE-BATTLE-MOD">SPROCKET-…-MOD</a></td></tr>
+</table>
+</div>
+
+<!-- ===================== SMC-AD シリーズ ===================== -->
+<h2 class="sec" id="smcad">SMC-AD シリーズ</h2>
+<p><b>SMC-AD</b>（Scrap Mechanic Converter – Assemble &amp; Deliver）は、Scrap Mechanic で作った機体を <b>Blender で整え</b>、<b>Unity（HDRP）に持っていく</b>か <b>Blender で撮影する</b>ための道具一式です。下の 5 つと変換ツールでできています。Unity 側は <b>HDRP 専用</b>です（URP 版の配布は終わりました）。</p>
+
+<h3 id="flow">全体の流れ</h3>
+<div class="flow">
+<table><tr>
+  <td><div class="box sm"><b>Scrap Mechanic</b><br>ブループリント</div></td>
+  <td class="arrow">→</td>
+  <td><div class="box bl"><b>SMC-AD</b>（Blender）<br>変換して取り込み・整理<br><small>＋ Surfaces で材質</small></div></td>
+  <td class="arrow">→</td>
+  <td><div class="box un"><b>Importer for Unity</b><br>SM の見た目で取り込み</div></td>
+  <td class="arrow">→</td>
+  <td>
+    <div class="box un"><b>SMC-DETAILS</b><br>汚し・装備</div>
+    <div style="height:6px"></div>
+    <div class="box un"><b>Tank Rigging</b><br>戦車を操縦</div>
+  </td>
+</tr></table>
+</div>
+<ul>
+  <li>変換は、改変した <b>SM-Converter</b>（QuestionableM 作）のコマンドライン版で行います。Blender の SMC-AD から自動で呼ばれます</li>
+  <li>Blender で撮影するだけなら、Unity 側は要りません</li>
+  <li>SMC-DETAILS と Tank Rigging は、どちらも入れなくても、片方だけでも使えます。両方入れると、作業ビュー（車両だけを映す別ウィンドウ）は共通の 1 つになります</li>
+</ul>
+
+<!-- SMC-AD -->
+<div class="win" id="p-smcad">
+  <div class="bar">SMC-AD（Blender 拡張＋変換ツール） <span class="ver">― 0.7.0 ／ リリース v0.7.0-alpha（2026/11/24）</span></div>
+  <div class="body">
+    <p>ブループリントを選ぶだけで、変換して Blender に取り込みます。部品の位置・回転・原点・親子を整え、Unity 向けに書き出します（リギングは手作業）。</p>
+    <ul>
+      <li>変換と取り込み（ジョイントごとにボディを分ける、見えない面を消す など）</li>
+      <li>SM の見た目のマテリアル、色の差し替え、ボディの親子の整理</li>
+      <li>左右反転コピー（先の部品も）、量産向けのアトラス書き出し（試作）</li>
+      <li>Unity 向けの FBX 書き出し</li>
+    </ul>
+    <p><b>必要なもの:</b> Windows、Scrap Mechanic（変換にゲームのデータを使います）、Blender 4.2 以降（確認は 5.3）</p>
+    <p><b>入れ方:</b></p>
+    <ol>
+      <li>変換ツールの zip を好きな場所に展開する</li>
+      <li>Blender の「編集 ＞ プリファレンス ＞ 拡張機能 ＞ ディスクからインストール」で <code>smc_ad-0.7.0.zip</code> を入れる</li>
+      <li>SMC-AD の設定の「変換ツール（SMConverterCLI.exe）」に、展開したフォルダの <code>SMConverterCLI.exe</code> を指定する</li>
+      <li>サイドバーの「SMC-AD」タブ →「ブループリントから取り込む…」</li>
+    </ol>
+    <p>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD/releases/download/v0.7.0-alpha/SMC-AD-Converter-win64-v0.7.0-alpha.zip">▼ 変換ツール（5 MB）</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD/releases/download/v0.7.0-alpha/smc_ad-0.7.0.zip">▼ smc_ad-0.7.0.zip</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD/releases/tag/v0.7.0-alpha">リリースのページ</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD">リポジトリ</a>
+    </p>
+    <p class="note">変換ツールが起動しないときは、Microsoft Visual C++ 再頒布可能パッケージ（x64）を入れてください。</p>
+  </div>
+</div>
+
+<!-- Surfaces -->
+<div class="win" id="p-surfaces">
+  <div class="bar">SMC-AD Surfaces（Blender 拡張・任意） <span class="ver">― 0.4.0</span></div>
+  <div class="body">
+    <p>パーツごとに材質（金属・ゴム・木など）を付けます。設定は Unity に書き出しても引き継がれます。パネルは同じ「SMC-AD」タブの中、SMC-AD の下に出ます。</p>
+    <p><b>入れ方:</b> SMC-AD と同じく「ディスクからインストール」で <code>smc_ad_surfaces-0.4.0.zip</code>。以前の「SMC-AD+ Surfaces」は先に削除してください（自分で保存した味付けは自動で引き継ぎます）。</p>
+    <p>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD/releases/download/v0.7.0-alpha/smc_ad_surfaces-0.4.0.zip">▼ smc_ad_surfaces-0.4.0.zip</a>
+    </p>
+  </div>
+</div>
+
+<!-- Importer -->
+<div class="win" id="p-importer">
+  <div class="bar">SMC-AD Importer for Unity <span class="ver">― com.smcad.importer 0.5.0</span></div>
+  <div class="body">
+    <p>Blender から書き出した FBX（または変換ツールの .glb）を、Scrap Mechanic の見た目（塗装色・光沢・発光・ガラス）のまま Unity に取り込みます。シェーダーは HDRP の Shader Graph です。Blender で付けた色や材質も引き継ぎます。</p>
+    <p><b>必要なもの:</b> Unity 6000.3 以降、HDRP 17.3 以降（リニア色空間）</p>
+    <p><b>入れ方:</b> Package Manager の「＋ ＞ Add package from tarball…」で tgz を入れる（tgz は入れたあとも消さずに置いておく）。<code>Tools ＞ SMC-AD</code> から取り込みます。</p>
+    <p>URP で作ったマテリアルは <code>Tools ＞ SMC-AD ＞ URP のマテリアルを HDRP に変換</code> で移せます。</p>
+    <p>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD/releases/download/v0.7.0-alpha/com.smcad.importer-0.5.0.tgz">▼ com.smcad.importer-0.5.0.tgz</a>
+    </p>
+  </div>
+</div>
+
+<!-- DETAILS -->
+<div class="win" id="p-details">
+  <div class="bar">SMC-DETAILS for Unity（試作・任意） <span class="ver">― com.smcad.details 0.4.0</span></div>
+  <div class="body">
+    <p>取り込んだ機体を汚したり、装備を付けたりします。焼き込みはなく、スライダーを動かすとすぐ見た目に反映されます。</p>
+    <ul>
+      <li>汚し: 塗装の質感、傷、錆、泥、砂 など</li>
+      <li>手描きブラシ、デカール</li>
+      <li>装備: チェーン、カモネット、布（揺れ・風あり）</li>
+    </ul>
+    <p><b>入れ方:</b> Importer を入れたあと、同じく tarball で入れます。<code>Tools ＞ SMC-AD ＞ 汚し・装備（SMC-DETAILS）</code></p>
+    <p>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD/releases/download/v0.7.0-alpha/com.smcad.details-0.4.0.tgz">▼ com.smcad.details-0.4.0.tgz</a>
+    </p>
+  </div>
+</div>
+
+<!-- Tank -->
+<div class="win" id="p-tank">
+  <div class="bar">SMC-AD Tank Rigging for Unity <span class="ver">― com.smcad.tankrig 0.9.0-alpha（2026/11/24）</span></div>
+  <div class="body">
+    <p>Unity に取り込んだ戦車を、<b>WASD とマウスで操縦できる戦車</b>にします。組み立てウィンドウで車体・砲塔・砲身を選び、履帯を置いて、ワンクリックで組み立てます。</p>
+    <ul>
+      <li>車体の物理演算と転輪ごとのサスペンション、地形に沿う履帯、地面に残る轍</li>
+      <li>War Thunder 風のカメラと操作、主砲・機銃・副砲塔</li>
+      <li>照準器 3 種類（光学、疑似サーマル、全周ゴーグル）、レーザー測距、弾種の選択</li>
+      <li>発砲炎・主砲の爆風・排気・土煙などのエフェクト、ターレットリングの疑似内装</li>
+    </ul>
+    <p><b>必要なもの:</b> Unity 6000.3 以降＋HDRP 17.3 以降、Input System（自動で入ります）、Importer で取り込んだ戦車</p>
+    <p><b>入れ方:</b> Package Manager の「＋ ＞ Add package from git URL…」に次を入力します（Git LFS が必要です。ない場合は下の tgz を tarball で）。</p>
+    <pre>https://github.com/KULALENUMIO/SMC-AD-TankRigging.git?path=/com.smcad.tankrig#v0.9.0-alpha</pre>
+    <p><code>Tools ＞ SMC-AD ＞ 戦車（Tank Rigging） ＞ 戦車組み立てウィンドウ</code> から使います。<b>先にプロジェクトのバックアップを取ってください。</b></p>
+    <p>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD-TankRigging/releases/download/v0.9.0-alpha/com.smcad.tankrig-0.9.0-alpha.tgz">▼ tgz（17 MB）</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD-TankRigging/releases/tag/v0.9.0-alpha">リリースのページ</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SMC-AD-TankRigging">リポジトリ</a>
+    </p>
+  </div>
+</div>
+
+<!-- ===================== ほかの道具 ===================== -->
+<h2 class="sec">Scrap Mechanic の MOD</h2>
+
+<div class="win" id="p-bplib">
+  <div class="bar">Blueprint Lib <span class="ver">― 1.0.1（2026/11/15）</span></div>
+  <div class="body">
+    <p>クリエイティブ向けの、<b>リフトの代わりになるブループリント管理ツール</b>です。何百個もあるブループリントを、フォルダ・タグ・お気に入りで整理して、リフトのように設置できます。ゲームを起動しなくても、ブラウザの管理画面で整理できます。</p>
+    <ul>
+      <li>フォルダ（階層あり）・タグ・お気に入り・非表示・最近使った、検索と並び替え</li>
+      <li>まとめて移動・タグ付け・順に設置</li>
+      <li>足りない MOD があるブループリントには ⚠ を表示</li>
+      <li>元の Blueprints フォルダは読むだけで、書き換えません。英・日・韓・中の 4 言語</li>
+    </ul>
+    <p><b>必要なもの:</b> Scrap Mechanic（クリエイティブのみ）、Python 3.10 以降（管理画面と一覧の作成に使います）</p>
+    <p>
+      <a class="btn" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3840235435">Steam Workshop で購読</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/BlueprintLib/releases/download/v1.0.1/BlueprintLib-1.0.1.zip">▼ zip（Workshop を使わない場合）</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/BlueprintLib">リポジトリ</a>
+    </p>
+  </div>
+</div>
+
+<h2 class="sec">そのほかの MOD</h2>
+
+<div class="win" id="p-sprocket">
+  <div class="bar">Sprocket Arcade Battle MOD <span class="ver">― 1.12.0（2026/11/19）</span></div>
+  <div class="body">
+    <p><a href="https://store.steampowered.com/app/1674170/Sprocket/">Sprocket</a> の戦車戦を、War Thunder や World of Tanks のようなアーケード風にする MOD です。機能はどれも、ゲームの設定画面に増える「MODS」タブで切り替えられます。</p>
+    <ul>
+      <li>弾道の予測と、着弾点での貫通判定（色で表示）</li>
+      <li>ギアや回転数を気にしなくていい操縦、素早い砲塔</li>
+      <li>右クリックでズーム／キューポラ視点、弾種の切り替え（1・2・3）</li>
+      <li>砲の名前に <code>[AC 10/450]</code> と書くと機関砲になる、撃破ログ、ミニマップ、修理 など</li>
+    </ul>
+    <p><b>必要なもの:</b> Sprocket 0.2.56.3、BepInEx 6.0.0-be.788（IL2CPP・Windows x64）。ゲームの更新で動かなくなることがあります。</p>
+    <p>
+      <a class="btn" href="https://github.com/KULALENUMIO/SPROCKET-ARCADE-BATTLE-MOD/releases/download/v1.12.0/SPROCKET-ARCADE-BATTLE-MOD-v1.12.0.zip">▼ zip</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SPROCKET-ARCADE-BATTLE-MOD#installation">入れ方（英語）</a>
+      <a class="btn" href="https://github.com/KULALENUMIO/SPROCKET-ARCADE-BATTLE-MOD">リポジトリ</a>
+    </p>
+  </div>
+</div>
+
+<!-- ===================== どれを入れる？ ===================== -->
+<h2 class="sec" id="which">どれを入れる？</h2>
+<div class="tbl">
+<table>
+  <tr><th>やりたいこと</th><th>入れるもの</th></tr>
+  <tr><td>SM の機体を Blender で撮影したい</td><td>変換ツール ＋ SMC-AD（材質も付けるなら ＋ Surfaces）</td></tr>
+  <tr><td>SM の機体を Unity に持っていきたい</td><td>上のもの ＋ Importer for Unity</td></tr>
+  <tr><td>Unity で汚したり、装備を付けたい</td><td>上のもの ＋ SMC-DETAILS</td></tr>
+  <tr><td>Unity で戦車を走らせたい</td><td>Importer まで ＋ Tank Rigging</td></tr>
+  <tr><td>SM のブループリントを整理したい</td><td>Blueprint Lib だけ</td></tr>
+  <tr><td>Sprocket をアーケード風に遊びたい</td><td>Sprocket Arcade Battle MOD だけ</td></tr>
+</table>
+</div>
+
+<h2 class="sec" id="renamed">名前が変わったもの（2026/11/24）</h2>
+<p>前の版を入れている場合は、<b>古いものを外してから</b>新しいものを入れてください。</p>
+<div class="tbl">
+<table>
+  <tr><th>前の名前</th><th>今の名前</th></tr>
+  <tr><td>SMC-AD+ Surfaces（<code>smc_ad_plus_surfaces</code>）</td><td>SMC-AD Surfaces（<code>smc_ad_surfaces</code>）</td></tr>
+  <tr><td>SMC-AD Scrap Mechanic Importer（<code>com.smcad.unity</code>）</td><td>SMC-AD Importer for Unity（<code>com.smcad.importer</code>）</td></tr>
+  <tr><td>SMC-AD+ Unity Tank Rigging Plugin（<code>com.tankrig.unity</code>）</td><td>SMC-AD Tank Rigging for Unity（<code>com.smcad.tankrig</code>）</td></tr>
+  <tr><td>リポジトリ SMC-AD-PLUS-UNITY-TANK-RIGGING</td><td>SMC-AD-TankRigging（古い URL は転送されます）</td></tr>
+</table>
+</div>
+<p class="note">URP 対応の旧版（SMC-AD v0.6.0-alpha まで、戦車 v0.7.0-alpha まで）は配布を終了しました。Unity 側は HDRP 専用です。</p>
+
+<!-- ===================== 更新履歴 ===================== -->
+<h2 class="sec" id="news">更新履歴</h2>
+<div class="tbl">
+<table>
+  <tr><th>日付</th><th>内容</th></tr>
+  <tr><td class="v">2026/11/25</td><td>このページを作りました <span class="new">NEW!</span></td></tr>
+  <tr><td class="v">2026/11/24</td><td>SMC-AD v0.7.0-alpha、Tank Rigging v0.9.0-alpha。Unity 側を HDRP 専用に、名前を整理、SMC-DETAILS を初めて同梱</td></tr>
+  <tr><td class="v">2026/11/19</td><td>Sprocket Arcade Battle MOD v1.12.0</td></tr>
+  <tr><td class="v">2026/11/15</td><td>Blueprint Lib 1.0.0、1.0.1（Steam Workshop でも公開）</td></tr>
+  <tr><td class="v">2026/11 前半</td><td>SMC-AD と戦車の URP 版（配布終了）</td></tr>
+  <tr><td class="v">2026/10/24</td><td>Sprocket Arcade Battle MOD v1.11.0</td></tr>
+</table>
+</div>
+
+<!-- ===================== 注意 ===================== -->
+<h2 class="sec" id="notes">注意・ライセンス</h2>
+<ul>
+  <li>どれも非公式のファン製ツールです。Scrap Mechanic は Axolot Games の商標で、これらは Axolot Games とは関係ありません。Sprocket の MOD も、Sprocket の開発元とは関係ありません</li>
+  <li>リポジトリにゲームのデータは入っていません。SMC-AD で変換したモデルには、利用者の PC にあるゲームのテクスチャが含まれます。配る・公開するときは Axolot Games の利用規約に従ってください</li>
+</ul>
+<div class="tbl">
+<table>
+  <tr><th>もの</th><th>ライセンス</th></tr>
+  <tr><td>SMC-AD の変換ツール（SM-Converter の改変版）</td><td>GPL-3.0</td></tr>
+  <tr><td>Blender 拡張（SMC-AD、SMC-AD Surfaces）</td><td>GPL-3.0-or-later</td></tr>
+  <tr><td>Unity パッケージ（Importer、SMC-DETAILS、Tank Rigging）</td><td>MIT（作ったゲームにそのまま入れられます）</td></tr>
+  <tr><td>Blueprint Lib、Sprocket Arcade Battle MOD</td><td>MIT</td></tr>
+</table>
+</div>
+<p class="note">謝辞: SM-Converter ／ SM-Converter-Plugin — <a href="https://github.com/QuestionableM">QuestionableM</a></p>
+
+<hr>
+<p style="text-align:right"><a href="#top">▲ ページの先頭へ</a></p>
+
+</div><!-- #main -->
+</div><!-- #wrap -->
+
+<div id="foot">
+  最終更新: 2026年11月25日　｜　<a href="https://github.com/KULALENUMIO">github.com/KULALENUMIO</a>　｜　このページのソース: <a href="https://github.com/KULALENUMIO/KULALENUMIO.github.io">KULALENUMIO.github.io</a>
+</div>
+
+</div><!-- #page -->
+</body>
+</html>

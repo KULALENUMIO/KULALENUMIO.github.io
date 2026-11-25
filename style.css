@@ -1,0 +1,188 @@
+/* KULALENUMIO のツール置き場 — 2000 年代前半の Windows XP 風。画像なし・CSS だけ */
+
+html { background: #5a7edc; }
+body {
+  margin: 0;
+  padding: 12px 8px 24px;
+  background: linear-gradient(#7ba2e7, #5a7edc 400px) no-repeat, #5a7edc;
+  color: #000;
+  font-family: Tahoma, Verdana, "Meiryo UI", "MS UI Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+a { color: #0000ee; }
+a:visited { color: #551a8b; }
+a:hover { color: #e00; }
+
+#page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #003c74;
+  box-shadow: 2px 2px 0 #3d5fae;
+}
+
+/* ---- タイトルバー（XP のウィンドウ） ---- */
+#titlebar {
+  background: linear-gradient(#0997ff, #0053ee 10%, #0050ee 50%, #0066ff 88%, #003dd7);
+  color: #fff;
+  padding: 6px 10px 5px;
+  border-bottom: 1px solid #003c74;
+  text-shadow: 1px 1px 0 #0f1089;
+}
+#titlebar h1 { margin: 0; font-size: 20px; letter-spacing: 1px; }
+#titlebar .sub { font-size: 11px; }
+
+#menubar {
+  background: #ece9d8;
+  border-bottom: 1px solid #aca899;
+  padding: 3px 8px;
+  font-size: 12px;
+}
+#menubar a { color: #000; text-decoration: none; padding: 0 6px; }
+#menubar a:hover { background: #316ac5; color: #fff; }
+
+#wrap { display: flex; align-items: flex-start; }
+
+/* ---- 左のメニュー（エクスプローラーのタスク欄） ---- */
+#side {
+  flex: 0 0 196px;
+  background: linear-gradient(#7ba2e7, #6375d6);
+  padding: 10px 10px 14px;
+  align-self: stretch;
+}
+.task { margin-bottom: 12px; background: #d6dff7; border: 1px solid #fff; }
+.task h2 {
+  margin: 0;
+  font-size: 12px;
+  color: #215dc6;
+  background: linear-gradient(to right, #fff, #c6d3f7);
+  padding: 3px 8px;
+}
+.task ul { margin: 0; padding: 6px 8px 6px 22px; list-style: square; color: #215dc6; }
+.task li { font-size: 12px; line-height: 1.7; }
+.task li li { list-style: circle; }
+.task ul ul { padding: 0 0 0 16px; }
+.task a { color: #215dc6; text-decoration: none; }
+.task a:hover { text-decoration: underline; color: #428eff; }
+.task p { margin: 0; padding: 6px 8px; font-size: 11px; color: #333; }
+
+/* ---- 本文 ---- */
+#main { flex: 1 1 auto; min-width: 0; padding: 12px 16px 8px; }
+
+h2.sec {
+  font-size: 15px;
+  margin: 22px 0 8px;
+  padding: 2px 8px;
+  color: #fff;
+  background: linear-gradient(to right, #3169c6, #a6caf0);
+  border-left: 6px solid #003c74;
+}
+h2.sec:first-child { margin-top: 0; }
+h3 { font-size: 13px; margin: 14px 0 4px; color: #003399; border-bottom: 1px dotted #7f9db9; }
+p { margin: 6px 0; }
+ul, ol { margin: 4px 0 8px; padding-left: 22px; }
+small, .note { font-size: 11px; color: #555; }
+code {
+  font-family: "Lucida Console", "MS Gothic", Consolas, monospace;
+  font-size: 12px;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 0 2px;
+}
+pre {
+  font-family: "Lucida Console", "MS Gothic", Consolas, monospace;
+  font-size: 12px;
+  background: #fff;
+  border: 2px inset #ece9d8;
+  padding: 6px 8px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.new { color: #f00; font-weight: bold; font-size: 11px; }
+
+/* 注意書き */
+.warn {
+  background: #ffffe1;
+  border: 1px solid #000;
+  padding: 6px 10px;
+  margin: 8px 0;
+}
+.warn b.mark { color: #c00; }
+
+/* 表 */
+.tbl { overflow-x: auto; margin: 6px 0 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 12px; }
+th, td { border: 1px solid #7f9db9; padding: 3px 6px; vertical-align: top; text-align: left; }
+th { background: linear-gradient(#fff, #ece9d8); font-weight: bold; white-space: nowrap; }
+tr:nth-child(even) td { background: #f5f8ff; }
+td.v { white-space: nowrap; }
+
+/* 製品ごとの小さなウィンドウ */
+.win { border: 1px solid #0831d9; margin: 12px 0 14px; background: #ece9d8; }
+.win > .bar {
+  background: linear-gradient(#0997ff, #0053ee 12%, #0066ff 88%, #003dd7);
+  color: #fff;
+  font-weight: bold;
+  padding: 3px 8px;
+  text-shadow: 1px 1px 0 #0f1089;
+}
+.win > .bar .ver { font-weight: normal; font-size: 11px; }
+.win > .body { padding: 6px 10px 8px; background: #fff; margin: 3px; border: 1px solid #aca899; }
+
+/* XP のボタン風リンク */
+a.btn {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  padding: 2px 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+  background: linear-gradient(#fff, #ece9d8 85%, #d6d0c5);
+  border: 1px solid #003c74;
+  border-radius: 3px;
+}
+a.btn:hover { box-shadow: inset 0 0 0 2px #f8b636; }
+a.btn:active { background: #e3e2da; }
+
+/* 流れ図（表で組む） */
+.flow { overflow-x: auto; margin: 8px 0; }
+.flow table { width: auto; border: 0; }
+.flow td { border: 0; padding: 2px; vertical-align: middle; text-align: center; background: none !important; }
+.flow .box {
+  border: 1px solid #003c74;
+  background: #fff;
+  box-shadow: 2px 2px 0 #aca899;
+  padding: 4px 6px;
+  font-size: 12px;
+  min-width: 96px;
+}
+.flow .box b { color: #003399; }
+.flow .box.sm  { background: #fff8e1; }
+.flow .box.bl  { background: #fdeee6; }
+.flow .box.un  { background: #e8f1ff; }
+.flow .arrow { font-size: 18px; color: #003c74; padding: 0 2px; }
+
+hr { border: 0; border-top: 1px solid #aca899; border-bottom: 1px solid #fff; margin: 14px 0; }
+
+#foot {
+  background: #ece9d8;
+  border-top: 1px solid #aca899;
+  padding: 6px 10px;
+  font-size: 11px;
+  text-align: center;
+  color: #333;
+}
+
+/* 狭い画面（スマホ）: メニューを上に */
+@media (max-width: 680px) {
+  body { padding: 0; }
+  #page { border: 0; box-shadow: none; }
+  #wrap { display: block; }
+  #side { padding: 8px 16px; }
+  .task { margin-bottom: 8px; }
+  #main { padding: 10px 16px; }
+  #menubar { overflow-x: auto; white-space: nowrap; }
+}
